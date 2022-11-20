@@ -26,3 +26,6 @@ It’s enough as long as it has a tidy appearance, functionality is more importa
 First, use the PrimeNg “Steps” component or design a wizard, it’s quite up to you then we need our form component to include 4 steps.
 
 - [ ] Each step must have a separate component.
+
+### Additional
+- [ ] change detection on-push for main-bar component
