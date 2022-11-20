@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import {AccordionModule} from "primeng/accordion";
-import {AutoCompleteModule} from "primeng/autocomplete";
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -13,8 +12,7 @@ import {AutoCompleteModule} from "primeng/autocomplete";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AccordionModule,
-    AutoCompleteModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
