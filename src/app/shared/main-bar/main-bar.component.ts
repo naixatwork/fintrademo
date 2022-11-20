@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MainBarTitleService} from "../../core/main-bar-title.service";
 
 @Component({
   selector: 'app-main-bar',
@@ -14,5 +15,8 @@ export class MainBarComponent {
 
   public _toggle(): void {
     this._isWide = !this._isWide;
+  }
+
+  constructor(public readonly mainBarTitleService: MainBarTitleService) {
   }
 }
