@@ -1,6 +1,7 @@
 ### General
 - [x] install tailwind
 - [x] install PrimeNg
+- [ ] implement dashboard with glass morphism
 - [ ] folder structure
   - [x] shared
   - [x] core

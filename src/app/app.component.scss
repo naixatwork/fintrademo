@@ -1,0 +1,52 @@
+.background {
+  @apply h-full w-full px-16 py-10 bg-no-repeat bg-cover bg-fixed scroll-smooth overflow-auto;
+  background-image: url("/assets/backgrounds/pink-lava-lamp.jpg");
+}
+
+.dashboard {
+  $drawer-tight-width: 4rem;
+  $drawer-wide-width: 15rem;
+
+  @apply w-full h-full rounded-2xl flex;
+
+  background: rgba(255, 255, 255, 0.41);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.9px);
+  -webkit-backdrop-filter: blur(8.9px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  &__drawer {
+    @apply bg-transparent overflow-hidden;
+    transition: width 300ms ease;
+
+    &--wide {
+      width: $drawer-wide-width;
+    }
+
+    &--tight {
+      width: $drawer-tight-width;
+    }
+  }
+
+  &__content {
+    @apply rounded-r-2xl;
+    transition: margin-left 300ms ease, width 300ms ease;
+
+    &--wide {
+      margin-left: $drawer-tight-width !important;
+      width: calc(100% - #{$drawer-tight-width}) !important;
+    }
+
+    &--tight {
+      margin-left: $drawer-wide-width !important;
+      width: calc(100% - #{$drawer-wide-width}) !important;
+    }
+
+    @apply h-full w-full;
+    background: rgba(30, 41, 59, 0.86);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(30, 41, 59, 1);
+  }
+}
