@@ -1,7 +1,13 @@
 ### General
-- [ ] install tailwind
-- [ ] install PrimeNg
+- [x] install tailwind
+- [x] install PrimeNg
+- [ ] folder structure
+  - [x] shared
+  - [x] core
 - [ ] make primeng adapter
+- [ ] test everything with ...
+  - [ ] firefox
+  - [ ] safari
 
 ### Wizard
 - [ ] Step one upload an image
