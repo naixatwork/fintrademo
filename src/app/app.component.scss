@@ -4,8 +4,8 @@
 }
 
 .dashboard {
-  $drawer-tight-width: 4rem;
-  $drawer-wide-width: 15rem;
+  $drawer-tight-width: 2rem;
+  $drawer-wide-width: 8rem;
 
   @apply w-full h-full rounded-2xl flex;
 
@@ -43,7 +43,7 @@
     }
 
     @apply h-full w-full;
-    background: rgba(30, 41, 59, 0.86);
+    background: rgba(19, 26, 37, 0.86);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);

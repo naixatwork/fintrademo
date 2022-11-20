@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MainBarComponent } from './main-bar/main-bar.component';
 import {AccordionModule} from "primeng/accordion";
 import {AutoCompleteModule} from "primeng/autocomplete";
+import {ButtonModule} from "primeng/button";
+import {RippleModule} from "primeng/ripple";
 
 
 @NgModule({
@@ -12,11 +14,14 @@ import {AutoCompleteModule} from "primeng/autocomplete";
   imports: [
     CommonModule,
     AccordionModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    ButtonModule,
+    RippleModule
   ],
   exports: [
     AccordionModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    MainBarComponent
   ]
 })
 export class SharedModule { }
