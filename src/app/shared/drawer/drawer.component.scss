@@ -1,0 +1,13 @@
+.drawer {
+  &__link {
+    @apply text-2xl flex justify-center items-center w-full gap-10 p-5 truncate;
+
+    & >.pi {
+      @apply text-3xl;
+    }
+
+    &--active {
+      @apply bg-gray-500;
+    }
+  }
+}

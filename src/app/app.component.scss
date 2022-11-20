@@ -4,8 +4,8 @@
 }
 
 .dashboard {
-  $drawer-tight-width: 2rem;
-  $drawer-wide-width: 8rem;
+  $drawer-tight-width: 5rem;
+  $drawer-wide-width: 15rem;
 
   @apply w-full h-full rounded-2xl flex;
 
@@ -33,12 +33,12 @@
     transition: margin-left 300ms ease, width 300ms ease;
 
     &--wide {
-      margin-left: $drawer-tight-width !important;
+      //margin-left: $drawer-tight-width !important;
       width: calc(100% - #{$drawer-tight-width}) !important;
     }
 
     &--tight {
-      margin-left: $drawer-wide-width !important;
+      //margin-left: $drawer-wide-width !important;
       width: calc(100% - #{$drawer-wide-width}) !important;
     }
 

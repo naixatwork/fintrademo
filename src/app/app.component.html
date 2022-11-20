@@ -4,18 +4,19 @@
       class="dashboard__drawer"
       [ngClass]="{'dashboard__drawer--wide': mainBar.isWide, 'dashboard__drawer--tight': !mainBar.isWide}"
     >
-      <p>lol</p>
+      <app-drawer
+        [isWide]="mainBar.isWide"
+      ></app-drawer>
     </div>
     <div
       class="dashboard__content"
       [ngClass]="{'dashboard__content--wide': !mainBar.isWide, 'dashboard__content--tight': mainBar.isWide}"
     >
       <app-main-bar #mainBar></app-main-bar>
-      <div class="h-full w-full overflow-auto">
+      <div class="w-full overflow-auto">
         <h1 class="text-3xl font-bold underline">
           Hello world!
         </h1>
-        <p-autoComplete></p-autoComplete>
       </div>
     </div>
   </div>

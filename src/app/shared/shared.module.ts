@@ -5,11 +5,13 @@ import {AccordionModule} from "primeng/accordion";
 import {AutoCompleteModule} from "primeng/autocomplete";
 import {ButtonModule} from "primeng/button";
 import {RippleModule} from "primeng/ripple";
+import { DrawerComponent } from './drawer/drawer.component';
 
 
 @NgModule({
   declarations: [
-    MainBarComponent
+    MainBarComponent,
+    DrawerComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import {RippleModule} from "primeng/ripple";
   exports: [
     AccordionModule,
     AutoCompleteModule,
-    MainBarComponent
+    MainBarComponent,
+    DrawerComponent
   ]
 })
 export class SharedModule { }
