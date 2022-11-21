@@ -51,7 +51,8 @@ export class WizardFieldsComponent {
     const initializeForm = () => {
       this._form = formBuilder.group({
         amount: [null, [Validators.required]],
-        date: [null, [Validators.required]]
+        date: [null, [Validators.required]],
+        status: [null, [Validators.required]]
       })
     }
 

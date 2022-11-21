@@ -16,7 +16,7 @@
 - [ ] Step two designs a form that has fields below
   - [x] Valid amount (only accept numbers)
   - [x] Valid date (only the next 5 days can be selected)
-  - [ ] Status (which is a dropdown with 4 options)
+  - [x] Status (which is a dropdown with 4 options)
   - [ ] Source of fund (Input that accepts only letters)
 - [ ] Step three a table of people and we should be able to select one person from the table and then move to the last step.
 - [ ] Step four shows just a summary of the last three steps

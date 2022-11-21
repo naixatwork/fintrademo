@@ -1,0 +1,12 @@
+<div [formGroup]="form" class="flex flex-col gap-1">
+  <label [for]="label" class="text-lg capitalize">{{label}}</label>
+  <p-dropdown
+    [filter]="true"
+    filterBy="status"
+    optionLabel="status"
+    [options]="options"
+    styleClass="w-full"
+    formControlName="value"
+    [inputId]="label"
+  ></p-dropdown>
+</div>
