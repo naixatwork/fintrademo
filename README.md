@@ -9,6 +9,7 @@
 - [ ] test everything with ...
   - [ ] firefox
   - [ ] safari
+- [ ] setup ngrx
 
 ### Wizard
 - [ ] Step one upload an image
