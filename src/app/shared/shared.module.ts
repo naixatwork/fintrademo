@@ -11,6 +11,7 @@ import {ImageControllerComponent} from './image-controller/image-controller.comp
 import {FileUploadModule} from "primeng/fileupload";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {ImageModule} from "primeng/image";
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {HttpClientModule} from "@angular/common/http";
     FileUploadModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ImageModule
   ],
   exports: [
     AccordionModule,

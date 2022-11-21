@@ -30,3 +30,5 @@ First, use the PrimeNg “Steps” component or design a wizard, it’s quite up
 
 ### Additional
 - [ ] change detection on-push for main-bar component
+- [ ] connect image-controller to a free backend api
+  - imgurs

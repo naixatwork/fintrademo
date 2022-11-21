@@ -1,14 +1,15 @@
 import {FormControlAdapter} from "./FormControlAdapter"
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, NgControl, Validators} from "@angular/forms";
 
 describe("FormControlAdapter", () => {
   class MockDynamicFormControl extends FormControlAdapter {
     constructor() {
       super(
         new FormGroup({
-          test: new FormControl('', [Validators.required])
-        })
-      );
+          test: new FormControl('', [Validators.required]),
+        }),
+        {} as NgControl
+      )
     }
   }
 

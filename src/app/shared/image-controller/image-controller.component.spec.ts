@@ -1,6 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from "@angular/core/testing";
 
-import { ImageControllerComponent } from './image-controller.component';
+import {ImageControllerComponent} from './image-controller.component';
+import {SharedModule} from "../shared.module";
+import {FormsModule, NgControl, ReactiveFormsModule} from "@angular/forms";
 
 describe('ImageControllerComponent', () => {
   let component: ImageControllerComponent;
@@ -8,7 +10,9 @@ describe('ImageControllerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ImageControllerComponent ]
+      imports: [FormsModule, ReactiveFormsModule, SharedModule],
+      declarations: [ ImageControllerComponent ],
+      providers: [NgControl]
     })
     .compileComponents();
 
@@ -20,4 +24,23 @@ describe('ImageControllerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it("should update #form on #setFileToForm()", () => {
+    const mockEvent = {
+      currentFiles: [new File([], "test")]
+    }
+
+    expect(component.form.value["value"]).withContext("checking if form is empty by default").toBeNull();
+    component.setFileToForm(mockEvent);
+    expect(component.form.value["value"]).not.toBeNull();
+  })
+
+  it("should remove element from #form on #removeFileFromForm()", () => {
+    const mockEvent = {
+      currentFiles: [new File([], "test")]
+    }
+    component.form.setValue({value: mockEvent.currentFiles});
+    component.removeFileFromForm({file: mockEvent.currentFiles[0]});
+    expect(component.form.value["value"]).toEqual([]);
+  })
 });
