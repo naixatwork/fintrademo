@@ -1,4 +1,4 @@
-import {Component, Host, SkipSelf} from '@angular/core';
+import {Component, SkipSelf} from '@angular/core';
 import {FormControlAdapter} from "../FormControlAdapater/FormControlAdapter";
 import {FormBuilder, NgControl, Validators} from "@angular/forms";
 
