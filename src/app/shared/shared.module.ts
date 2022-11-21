@@ -6,25 +6,30 @@ import {AutoCompleteModule} from "primeng/autocomplete";
 import {ButtonModule} from "primeng/button";
 import {RippleModule} from "primeng/ripple";
 import { DrawerComponent } from './drawer/drawer.component';
+import {StepsModule} from "primeng/steps";
+import { ImageControllerComponent } from './image-controller/image-controller.component';
 
 
 @NgModule({
   declarations: [
     MainBarComponent,
-    DrawerComponent
+    DrawerComponent,
+    ImageControllerComponent
   ],
   imports: [
     CommonModule,
     AccordionModule,
     AutoCompleteModule,
     ButtonModule,
-    RippleModule
+    RippleModule,
+    StepsModule
   ],
   exports: [
     AccordionModule,
     AutoCompleteModule,
     MainBarComponent,
-    DrawerComponent
+    DrawerComponent,
+    StepsModule
   ]
 })
 export class SharedModule { }
