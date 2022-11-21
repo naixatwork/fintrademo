@@ -7,15 +7,21 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./wizard-image.component.scss']
 })
 export class WizardImageComponent {
-  private form!: FormGroup;
+  private _form!: FormGroup;
+
+  public get form(): FormGroup {
+    return this._form;
+  }
 
   constructor(private readonly formBuilder: FormBuilder) {
     const initializeForm = () => {
-      this.form = formBuilder.group({
+      this._form = formBuilder.group({
         image: [null, [Validators.required]]
       })
     }
 
     initializeForm();
+
+    this.form.valueChanges.subscribe(console.log)
   }
 }

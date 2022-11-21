@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormControlAdapter} from "../FormControlAdapater/FormControlAdapter";
-import {FormBuilder, Validators} from "@angular/forms";
+import {FormBuilder, NgControl, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-image-controller',
@@ -9,12 +9,14 @@ import {FormBuilder, Validators} from "@angular/forms";
 })
 export class ImageControllerComponent extends FormControlAdapter {
   constructor(
-    private readonly formBuilder: FormBuilder
+    private readonly formBuilder: FormBuilder,
+    ngControl: NgControl
   ) {
     super(
       formBuilder.group({
         value: ["", [Validators.required]]
-      })
+      }),
+      ngControl
     );
   }
 }

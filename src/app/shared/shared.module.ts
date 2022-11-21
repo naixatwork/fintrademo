@@ -1,13 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MainBarComponent } from './main-bar/main-bar.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {MainBarComponent} from './main-bar/main-bar.component';
 import {AccordionModule} from "primeng/accordion";
 import {AutoCompleteModule} from "primeng/autocomplete";
 import {ButtonModule} from "primeng/button";
 import {RippleModule} from "primeng/ripple";
-import { DrawerComponent } from './drawer/drawer.component';
+import {DrawerComponent} from './drawer/drawer.component';
 import {StepsModule} from "primeng/steps";
-import { ImageControllerComponent } from './image-controller/image-controller.component';
+import {ImageControllerComponent} from './image-controller/image-controller.component';
+import {FileUploadModule} from "primeng/fileupload";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -22,14 +25,22 @@ import { ImageControllerComponent } from './image-controller/image-controller.co
     AutoCompleteModule,
     ButtonModule,
     RippleModule,
-    StepsModule
+    StepsModule,
+    FileUploadModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   exports: [
     AccordionModule,
     AutoCompleteModule,
     MainBarComponent,
     DrawerComponent,
-    StepsModule
+    StepsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    ImageControllerComponent,
+    HttpClientModule
   ]
 })
 export class SharedModule { }
