@@ -6,8 +6,13 @@
   <app-date-controller
     label="date"
     formControlName="date"
-    [maxDate]="dateLimit['max']"
-    [minDate]="dateLimit['min']"
+    [maxDate]="dateLimit()['max']"
+    [minDate]="dateLimit()['min']"
   >
   </app-date-controller>
 </div>
+
+<!--
+
+
+-->

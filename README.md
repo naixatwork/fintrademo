@@ -15,7 +15,7 @@
 - [x] Step one upload an image
 - [ ] Step two designs a form that has fields below
   - [x] Valid amount (only accept numbers)
-  - [ ] Valid date (only the next 5 days can be selected)
+  - [x] Valid date (only the next 5 days can be selected)
   - [ ] Status (which is a dropdown with 4 options)
   - [ ] Source of fund (Input that accepts only letters)
 - [ ] Step three a table of people and we should be able to select one person from the table and then move to the last step.
@@ -35,3 +35,4 @@ First, use the PrimeNg “Steps” component or design a wizard, it’s quite up
 - [ ] 100% code coverage
 - [ ] validators
 - [ ] hint and error for custom formControls
+- [ ] date range control

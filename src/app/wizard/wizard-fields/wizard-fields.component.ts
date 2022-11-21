@@ -9,7 +9,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class WizardFieldsComponent {
   private _form!: FormGroup;
 
-  public get dateLimit(): Record<string, Date> {
+  public dateLimit(): Record<string, Date> {
     const getToday = (): Record<string, Function> => {
       const today = new Date();
       const getTime = () => today.getTime();
@@ -37,7 +37,6 @@ export class WizardFieldsComponent {
       const NUMBER_OF_DAYS_AFTER = 1;
       return new Date(today["getTime"]() + convertNumberOfDaysToTime(NUMBER_OF_DAYS_AFTER));
     }
-
     return {
       max: getFiveDaysAfterToday(),
       min: getTomorrow()

@@ -1,17 +1,20 @@
-import {Component, Input, SkipSelf} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit, SkipSelf} from '@angular/core';
 import {FormBuilder, NgControl, Validators} from "@angular/forms";
 import {FormControlAdapter} from "../FormControlAdapater/FormControlAdapter";
 
 @Component({
   selector: 'app-date-controller',
   templateUrl: './date-controller.component.html',
-  styleUrls: ['./date-controller.component.scss']
+  styleUrls: ['./date-controller.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DateControllerComponent extends FormControlAdapter {
+export class DateControllerComponent extends FormControlAdapter implements OnInit {
   @Input() public label: string = "";
 
   @Input() public minDate!: Date;
+  public _minDate!: Date;
   @Input() public maxDate!: Date;
+  public _maxDate!: Date;
 
 
   constructor(
@@ -24,5 +27,15 @@ export class DateControllerComponent extends FormControlAdapter {
       }),
       ngControl
     );
+  }
+
+  ngOnInit() {
+    const setDateLimits = () => {
+      // To Prevent p-calendar calling for date limits indefinitely.
+      this._minDate = this.minDate;
+      this._maxDate = this.maxDate;
+    }
+
+    setDateLimits();
   }
 }
