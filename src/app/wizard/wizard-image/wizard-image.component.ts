@@ -21,7 +21,5 @@ export class WizardImageComponent {
     }
 
     initializeForm();
-
-    this.form.valueChanges.subscribe(console.log)
   }
 }
