@@ -24,9 +24,11 @@ export class WizardComponent implements OnInit {
       this.steps = [
         {
           label: 'Image',
+          routerLink: "image",
         },
         {
-          label: 'Seat',
+          label: 'Fields',
+          routerLink: "fields",
         },
         {
           label: 'Payment',

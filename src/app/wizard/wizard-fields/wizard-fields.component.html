@@ -1,0 +1,13 @@
+<div [formGroup]="form" class="grid grid-cols-3 gap-5">
+  <app-amount-controller
+    label="amount"
+    formControlName="amount"
+  ></app-amount-controller>
+  <app-date-controller
+    label="date"
+    formControlName="date"
+    [maxDate]="dateLimit['max']"
+    [minDate]="dateLimit['min']"
+  >
+  </app-date-controller>
+</div>

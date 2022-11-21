@@ -1,0 +1,10 @@
+<div [formGroup]="form" class="flex flex-col gap-1 w-full">
+  <label [for]="label" class="text-lg capitalize">{{label}}</label>
+  <p-calendar
+    formControlName="value"
+    styleClass="w-full"
+    [inputId]="label"
+    [maxDate]="maxDate"
+    [minDate]="minDate"
+  ></p-calendar>
+</div>

@@ -7,12 +7,14 @@ import {ToastModule} from "primeng/toast";
 import {StepsModule} from "primeng/steps";
 import {SharedModule} from "../shared/shared.module";
 import { WizardImageComponent } from './wizard-image/wizard-image.component';
+import { WizardFieldsComponent } from './wizard-fields/wizard-fields.component';
 
 
 @NgModule({
   declarations: [
     WizardComponent,
-    WizardImageComponent
+    WizardImageComponent,
+    WizardFieldsComponent
   ],
   imports: [
     CommonModule,

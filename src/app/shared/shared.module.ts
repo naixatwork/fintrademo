@@ -12,13 +12,19 @@ import {FileUploadModule} from "primeng/fileupload";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {ImageModule} from "primeng/image";
+import { AmountControllerComponent } from './amount-controller/amount-controller.component';
+import {InputNumberModule} from "primeng/inputnumber";
+import { DateControllerComponent } from './date-controller/date-controller.component';
+import {CalendarModule} from "primeng/calendar";
 
 
 @NgModule({
   declarations: [
     MainBarComponent,
     DrawerComponent,
-    ImageControllerComponent
+    ImageControllerComponent,
+    AmountControllerComponent,
+    DateControllerComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +37,9 @@ import {ImageModule} from "primeng/image";
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    ImageModule
+    ImageModule,
+    InputNumberModule,
+    CalendarModule
   ],
   exports: [
     AccordionModule,
@@ -42,7 +50,9 @@ import {ImageModule} from "primeng/image";
     ReactiveFormsModule,
     FormsModule,
     ImageControllerComponent,
-    HttpClientModule
+    HttpClientModule,
+    AmountControllerComponent,
+    DateControllerComponent
   ]
 })
 export class SharedModule { }
