@@ -28,21 +28,17 @@ export class StatusControllerComponent extends FormControlAdapter {
         {
           status: "foo"
         },
-
         {
           status: "bar"
         },
-
         {
           status: "fea"
         },
-
         {
           status: "bae"
         }
       ]
     }
-
 
     setOptions();
   }
