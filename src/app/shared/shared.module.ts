@@ -18,6 +18,8 @@ import { DateControllerComponent } from './date-controller/date-controller.compo
 import {CalendarModule} from "primeng/calendar";
 import { StatusControllerComponent } from './status-controller/status-controller.component';
 import {DropdownModule} from "primeng/dropdown";
+import { FundControllerComponent } from './fund-controller/fund-controller.component';
+import {InputTextModule} from "primeng/inputtext";
 
 
 @NgModule({
@@ -27,24 +29,26 @@ import {DropdownModule} from "primeng/dropdown";
     ImageControllerComponent,
     AmountControllerComponent,
     DateControllerComponent,
-    StatusControllerComponent
+    StatusControllerComponent,
+    FundControllerComponent
   ],
-    imports: [
-        CommonModule,
-        AccordionModule,
-        AutoCompleteModule,
-        ButtonModule,
-        RippleModule,
-        StepsModule,
-        FileUploadModule,
-        ReactiveFormsModule,
-        FormsModule,
-        HttpClientModule,
-        ImageModule,
-        InputNumberModule,
-        CalendarModule,
-        DropdownModule
-    ],
+  imports: [
+    CommonModule,
+    AccordionModule,
+    AutoCompleteModule,
+    ButtonModule,
+    RippleModule,
+    StepsModule,
+    FileUploadModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    ImageModule,
+    InputNumberModule,
+    CalendarModule,
+    DropdownModule,
+    InputTextModule
+  ],
   exports: [
     AccordionModule,
     AutoCompleteModule,
@@ -57,7 +61,8 @@ import {DropdownModule} from "primeng/dropdown";
     HttpClientModule,
     AmountControllerComponent,
     DateControllerComponent,
-    StatusControllerComponent
+    StatusControllerComponent,
+    FundControllerComponent
   ]
 })
 export class SharedModule { }
