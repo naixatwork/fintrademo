@@ -31,7 +31,8 @@ export class WizardComponent implements OnInit {
           routerLink: "fields",
         },
         {
-          label: 'Payment',
+          label: 'People',
+          routerLink: "people"
         },
         {
           label: 'Confirmation',

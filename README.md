@@ -1,13 +1,13 @@
 ### General
 - [x] install tailwind
 - [x] install PrimeNg
-- [ ] implement dashboard with glass morphism
-- [ ] folder structure
+- [x] implement dashboard with glass morphism
+- [x] folder structure
   - [x] shared
   - [x] core
-- [ ] make primeng adapter
+- [x] make primeng adapter
 - [ ] test everything with ...
-  - [ ] firefox
+  - [x] firefox
   - [ ] safari
 - [ ] setup ngrx
 
@@ -17,7 +17,7 @@
   - [x] Valid amount (only accept numbers)
   - [x] Valid date (only the next 5 days can be selected)
   - [x] Status (which is a dropdown with 4 options)
-  - [ ] Source of fund (Input that accepts only letters)
+  - [x] Source of fund (Input that accepts only letters)
 - [ ] Step three a table of people and we should be able to select one person from the table and then move to the last step.
 - [ ] Step four shows just a summary of the last three steps
 
