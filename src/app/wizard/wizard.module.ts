@@ -14,6 +14,10 @@ import {ImageModule} from "primeng/image";
 import {CheckboxModule} from "primeng/checkbox";
 import {RadioButtonModule} from "primeng/radiobutton";
 import { WizardSummaryComponent } from './wizard-summary/wizard-summary.component';
+import {StoreModule} from "@ngrx/store";
+import {imageReducer} from "./wizard-image/wizard-image.reducer";
+import {ButtonModule} from "primeng/button";
+import {RippleModule} from "primeng/ripple";
 
 
 @NgModule({
@@ -31,7 +35,12 @@ import { WizardSummaryComponent } from './wizard-summary/wizard-summary.componen
     TableModule,
     ImageModule,
     CheckboxModule,
-    RadioButtonModule
+    RadioButtonModule,
+    StoreModule.forFeature('wizard', {
+      "image": imageReducer
+    }),
+    ButtonModule,
+    RippleModule
   ]
 })
 export class WizardModule { }

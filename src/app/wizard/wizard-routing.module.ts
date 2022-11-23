@@ -11,7 +11,7 @@ const routes: Routes = [
     path: "",
     component: WizardComponent,
     children: [
-      {path: "", redirectTo: 'summary', pathMatch: "full"},
+      {path: "", redirectTo: 'image', pathMatch: "full"},
       {path: "image", component: WizardImageComponent},
       {path: "fields", component: WizardFieldsComponent},
       {path: "people", component: WizardPeopleComponent},

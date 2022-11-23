@@ -10,6 +10,7 @@
   - [x] firefox
   - [ ] safari
 - [x] setup ngrx
+- [ ] initialize forms with store
 
 ### Wizard
 - [x] Step one upload an image
