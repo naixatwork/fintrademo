@@ -6,11 +6,11 @@
   - [x] shared
   - [x] core
 - [x] make primeng adapter
-- [ ] test everything with ...
+- [x] test everything with ...
   - [x] firefox
-  - [ ] safari
+  - [x] safari
 - [x] setup ngrx
-- [ ] initialize forms with store
+- [x] initialize forms with store
 
 ### Wizard
 - [x] Step one upload an image
@@ -20,7 +20,7 @@
   - [x] Status (which is a dropdown with 4 options)
   - [x] Source of fund (Input that accepts only letters)
 - [x] Step three a table of people and we should be able to select one person from the table and then move to the last step.
-- [ ] Step four shows just a summary of the last three steps
+- [x] Step four shows just a summary of the last three steps
 
 ### Description
 Create a project with Angular latest version and install the packages you need, install the PrimeNg UI framework so you can design faster.
@@ -34,6 +34,6 @@ First, use the PrimeNg “Steps” component or design a wizard, it’s quite up
 - [ ] connect image-controller to a free backend api
   - imgurs
 - [ ] 100% code coverage
-- [ ] validators
+- [x] validators
 - [ ] hint and error for custom formControls
 - [ ] date range control
