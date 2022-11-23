@@ -13,6 +13,7 @@ import {TableModule} from "primeng/table";
 import {ImageModule} from "primeng/image";
 import {CheckboxModule} from "primeng/checkbox";
 import {RadioButtonModule} from "primeng/radiobutton";
+import { WizardSummaryComponent } from './wizard-summary/wizard-summary.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {RadioButtonModule} from "primeng/radiobutton";
     WizardComponent,
     WizardImageComponent,
     WizardFieldsComponent,
-    WizardPeopleComponent
+    WizardPeopleComponent,
+    WizardSummaryComponent
   ],
   imports: [
     CommonModule,

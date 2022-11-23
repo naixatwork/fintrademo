@@ -4,16 +4,18 @@ import {WizardComponent} from "./wizard.component";
 import {WizardImageComponent} from "./wizard-image/wizard-image.component";
 import {WizardFieldsComponent} from "./wizard-fields/wizard-fields.component";
 import {WizardPeopleComponent} from "./wizard-people/wizard-people.component";
+import {WizardSummaryComponent} from "./wizard-summary/wizard-summary.component";
 
 const routes: Routes = [
   {
     path: "",
     component: WizardComponent,
     children: [
-      {path: "", redirectTo: 'people', pathMatch: "full"},
+      {path: "", redirectTo: 'summary', pathMatch: "full"},
       {path: "image", component: WizardImageComponent},
       {path: "fields", component: WizardFieldsComponent},
-      {path: "people", component: WizardPeopleComponent}
+      {path: "people", component: WizardPeopleComponent},
+      {path: "summary", component: WizardSummaryComponent}
     ]
   }
 ];

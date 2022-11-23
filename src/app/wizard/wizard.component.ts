@@ -35,7 +35,8 @@ export class WizardComponent implements OnInit {
           routerLink: "people"
         },
         {
-          label: 'Confirmation',
+          label: 'Summary',
+          routerLink: "summary",
         }
       ];
     }
