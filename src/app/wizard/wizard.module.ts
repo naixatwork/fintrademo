@@ -18,6 +18,8 @@ import {ButtonModule} from "primeng/button";
 import {RippleModule} from "primeng/ripple";
 import {fieldsReducer} from "./wizard-fields/wizard-fields.reducer";
 import {peopleReducer} from "./wizard-people/wizard-people.reducer";
+import {CardModule} from "primeng/card";
+import {PanelModule} from "primeng/panel";
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import {peopleReducer} from "./wizard-people/wizard-people.reducer";
       "people": peopleReducer
     }),
     ButtonModule,
-    RippleModule
+    RippleModule,
+    CardModule,
+    PanelModule
   ]
 })
 export class WizardModule { }
