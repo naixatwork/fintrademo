@@ -12,7 +12,7 @@
     <ng-template pTemplate="body" let-people>
       <tr>
         <td>
-          <p-radioButton #checkbox [value]="people" [(ngModel)]="selectedPeople"></p-radioButton>
+          <p-radioButton #checkbox [value]="people" [(ngModel)]="selectedPeople" (click)="updateStoreOnPersonSelect()"></p-radioButton>
         </td>
         <td>{{people.id}}</td>
         <td>
@@ -26,5 +26,5 @@
 </ng-container>
 <div class="w-full flex justify-end items-center gap-2 mt-5">
   <a routerLink="../fields" pButton pRipple label="Fields" icon="pi pi-angle-left" iconPos="left" ></a>
-  <a routerLink="../summary" pButton pRipple label="Summary" icon="pi pi-angle-right" iconPos="right" ></a>
+  <p-button [disabled]="!selectedPeople" routerLink="../summary" pRipple label="Summary" icon="pi pi-angle-right" iconPos="right" ></p-button>
 </div>

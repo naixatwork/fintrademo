@@ -2,6 +2,8 @@ import {Component, Self, ViewChildren} from '@angular/core';
 import {WizardPeopleService} from "./wizard-people.service";
 import {IPeople} from "./people.type";
 import {Checkbox} from "primeng/checkbox";
+import {Store} from "@ngrx/store";
+import {setPeople} from "./wizard-people.action";
 
 @Component({
   selector: 'app-wizard-people',
@@ -15,8 +17,15 @@ export class WizardPeopleComponent {
   public selectedPeople?: IPeople;
 
   constructor(
-    @Self() public readonly peopleService: WizardPeopleService
+    @Self() public readonly peopleService: WizardPeopleService,
+    private readonly store: Store<{ wizard: { people: IPeople } }>
   ) {
+  }
+
+  public updateStoreOnPersonSelect(): void {
+    if (!this.selectedPeople) return;
+
+    this.store.dispatch(setPeople(this.selectedPeople));
   }
 }
 

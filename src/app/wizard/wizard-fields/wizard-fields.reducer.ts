@@ -17,7 +17,7 @@ export const initialState: FieldsForm = {
 
 export const fieldsReducer = createReducer(
   initialState,
-  on(setFields, (state, {...args}) => {
+  on(setFields, (state, {...args}: FieldsForm) => {
     return {
       ...state,
       ...args
