@@ -8,7 +8,7 @@ import {IPeople} from "../wizard-people/people.type";
   templateUrl: './wizard-summary.component.html',
   styleUrls: ['./wizard-summary.component.scss']
 })
-export class WizardSummaryComponent implements OnInit {
+export class WizardSummaryComponent {
   constructor(
     public readonly store: Store<{
       wizard: {
@@ -18,9 +18,5 @@ export class WizardSummaryComponent implements OnInit {
       }
     }>
   ) {
-  }
-
-  ngOnInit() {
-    this.store.subscribe(console.log)
   }
 }

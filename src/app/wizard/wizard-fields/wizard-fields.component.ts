@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {FieldsForm} from "./wizard-fields.reducer";
 import {Store} from "@ngrx/store";
 import {setImages} from "../wizard-image/wizard-image.action";
-import {debounceTime, map} from "rxjs";
+import {debounceTime, first, map} from "rxjs";
 import {setFields} from "./wizard-fields.action";
 
 @Component({
@@ -69,6 +69,27 @@ export class WizardFieldsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const setFormValueFromStore = () => {
+      const setFormValue = ({amount, date, status, fund}: FieldsForm) => {
+        this.form.get('amount')?.setValue({value: amount})
+        this.form.get('date')?.setValue({value: date})
+        this.form.get('status')?.setValue({value: status})
+        this.form.get('fund')?.setValue({value: fund})
+      }
+
+      this.store
+        .pipe(
+          first(),
+          map((storeValue) => {
+            return storeValue.wizard.fields
+          })
+        )
+        .subscribe({
+            next: setFormValue
+          }
+        )
+    }
+
     const updateStoreOnFormValueChange = () => {
       const dispatchStore = ({...args}: FieldsForm) => {
         this.store.dispatch(setFields(args));
@@ -91,6 +112,7 @@ export class WizardFieldsComponent implements OnInit {
         })
     }
 
+    setFormValueFromStore();
     updateStoreOnFormValueChange();
   }
 }

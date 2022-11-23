@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Store} from "@ngrx/store";
-import {debounceTime, map} from "rxjs";
+import {debounceTime, first, map} from "rxjs";
 import {setImages} from "./wizard-image.action";
 
 @Component({
@@ -30,6 +30,24 @@ export class WizardImageComponent implements OnInit {
   }
 
   ngOnInit() {
+    const setFormValueFromStore = () => {
+      const setFormValue = (images: File[]) => {
+        this.form.get('images')?.setValue({value: images})
+      }
+
+      this.store
+        .pipe(
+          first(),
+          map((storeValue) => {
+            return storeValue.wizard.image
+          })
+        )
+        .subscribe({
+            next: setFormValue
+          }
+        )
+    }
+
     const updateStoreOnFormValueChange = () => {
       const dispatchStore = (images: File[]) => {
         this.store.dispatch(setImages({images}))
@@ -47,6 +65,7 @@ export class WizardImageComponent implements OnInit {
         })
     }
 
+    setFormValueFromStore();
     updateStoreOnFormValueChange();
   }
 }
