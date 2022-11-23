@@ -1,12 +1,17 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FieldsForm} from "./wizard-fields.reducer";
+import {Store} from "@ngrx/store";
+import {setImages} from "../wizard-image/wizard-image.action";
+import {debounceTime, map} from "rxjs";
+import {setFields} from "./wizard-fields.action";
 
 @Component({
   selector: 'app-wizard-fields',
   templateUrl: './wizard-fields.component.html',
   styleUrls: ['./wizard-fields.component.scss']
 })
-export class WizardFieldsComponent {
+export class WizardFieldsComponent implements OnInit {
   private _form!: FormGroup;
 
   public dateLimit(): Record<string, Date> {
@@ -47,7 +52,10 @@ export class WizardFieldsComponent {
     return this._form;
   }
 
-  constructor(private readonly formBuilder: FormBuilder) {
+  constructor(
+    private readonly formBuilder: FormBuilder,
+    private readonly store: Store<{ wizard: { fields: FieldsForm } }>
+  ) {
     const initializeForm = () => {
       this._form = formBuilder.group({
         amount: [null, [Validators.required]],
@@ -58,7 +66,31 @@ export class WizardFieldsComponent {
     }
 
     initializeForm();
+  }
 
-    this.form.valueChanges.subscribe(console.log)
+  ngOnInit(): void {
+    const updateStoreOnFormValueChange = () => {
+      const dispatchStore = ({...args}: FieldsForm) => {
+        this.store.dispatch(setFields(args));
+      }
+
+      this._form.valueChanges
+        .pipe(
+          debounceTime(300),
+          map((value) => {
+            return {
+              amount: value.amount?.value,
+              date: value.date?.value,
+              status: value.status?.value,
+              fund: value.fund?.value,
+            };
+          })
+        )
+        .subscribe({
+          next: dispatchStore
+        })
+    }
+
+    updateStoreOnFormValueChange();
   }
 }

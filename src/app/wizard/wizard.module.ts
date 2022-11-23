@@ -18,6 +18,7 @@ import {StoreModule} from "@ngrx/store";
 import {imageReducer} from "./wizard-image/wizard-image.reducer";
 import {ButtonModule} from "primeng/button";
 import {RippleModule} from "primeng/ripple";
+import {fieldsReducer} from "./wizard-fields/wizard-fields.reducer";
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {RippleModule} from "primeng/ripple";
     CheckboxModule,
     RadioButtonModule,
     StoreModule.forFeature('wizard', {
-      "image": imageReducer
+      "image": imageReducer,
+      "fields": fieldsReducer
     }),
     ButtonModule,
     RippleModule
